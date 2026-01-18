@@ -1,0 +1,524 @@
+{
+  "xp": 495,
+  "level": 5,
+  "submissions": [
+    {
+      "time": "2026-01-18T03:34:37.119905Z",
+      "type": "ramble",
+      "xp_earned": 15,
+      "payload": {
+        "text": "The staff was rude and mean and the proces took so long and the explanations were bad and left me unsatisfyed",
+        "ai": {
+          "bullets": [
+            "Staff was rude and mean",
+            "Process took too long",
+            "Explanations were bad",
+            "Left me unsatisfied"
+          ],
+          "sentiment": "negative",
+          "tags": [
+            "customer service",
+            "staff behavior",
+            "process delay",
+            "poor communication",
+            "dissatisfaction"
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T03:34:54.798589Z",
+      "type": "ramble",
+      "xp_earned": 15,
+      "payload": {
+        "text": "The staff was rude and mean and the proces took so long and the explanations were bad and left me unsatisfyed",
+        "ai": {
+          "bullets": [
+            "Staff was rude and mean",
+            "Process took too long",
+            "Explanations were bad",
+            "Left me unsatisfied"
+          ],
+          "sentiment": "negative",
+          "tags": [
+            "customer service",
+            "wait time",
+            "communication",
+            "dissatisfaction"
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T03:45:16.268471Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Crashes": 1,
+          "Payment issues": 2,
+          "Delays": 1,
+          "Confusing UI": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T03:46:47.213119Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Slow service": 3,
+          "Confusing UI": 4,
+          "Delays": 3
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T04:31:14.258434Z",
+      "type": "ramble",
+      "xp_earned": 15,
+      "payload": {
+        "text": "Amazing service, amazing staff",
+        "ai": {
+          "bullets": [
+            "Amazing service",
+            "Amazing staff"
+          ],
+          "sentiment": "positive",
+          "tags": [
+            "service",
+            "staff",
+            "customer satisfaction"
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T04:31:49.744162Z",
+      "type": "ramble",
+      "xp_earned": 15,
+      "payload": {
+        "text": "Love this service, super friendly staff",
+        "ai": {
+          "bullets": [
+            "Love this service",
+            "Super friendly staff"
+          ],
+          "sentiment": "positive",
+          "tags": [
+            "service",
+            "staff",
+            "friendly"
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T05:02:44.227658Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Crashes": 1,
+          "Confusing UI": 1,
+          "Slow service": 1,
+          "Payment issues": 1,
+          "Other": 1,
+          "Delays": 1,
+          "Annoying pop-ups": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T05:12:35.211061Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Crashes": 1,
+          "Confusing UI": 1,
+          "Payment issues": 1,
+          "Other": 2,
+          "Other Details": "Bad staff",
+          "Annoying pop-ups": 1,
+          "Delays": 1,
+          "Slow service": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T05:27:31.936153Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Slow service": 1,
+          "Confusing UI": 1,
+          "Other": 2,
+          "Other Details": "Bad service",
+          "Crashes": 1,
+          "Annoying pop-ups": 1,
+          "Payment issues": 1,
+          "Delays": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T05:29:14.452389Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Confusing UI": 1,
+          "Delays": 1,
+          "Payment issues": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T05:53:19.517345Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {}
+      }
+    },
+    {
+      "time": "2026-01-18T07:22:41.685482Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Crashes": 1,
+          "Annoying pop-ups": 1,
+          "Confusing UI": 1,
+          "Payment issues": 1,
+          "Other": 1,
+          "Delays": 1,
+          "Slow service": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T08:08:46.368074Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Crashes": 1,
+          "Slow service": 1,
+          "Confusing UI": 1,
+          "Payment issues": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T08:09:27.219796Z",
+      "type": "ramble",
+      "xp_earned": 15,
+      "payload": {
+        "text": "Service was good but slow, ran into a lot of technical issues",
+        "ai": {
+          "bullets": [
+            "Service was good",
+            "Service was slow",
+            "Encountered many technical issues"
+          ],
+          "sentiment": "negative",
+          "tags": [
+            "service",
+            "speed",
+            "technical issues"
+          ]
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T10:16:14.572471Z",
+      "type": "snake_game",
+      "xp_earned": 20,
+      "payload": [
+        {
+          "key": "service",
+          "label": "Service Quality",
+          "emoji": "\ud83c\udf4e",
+          "color": "#FF0000",
+          "x": 20,
+          "y": 5,
+          "alive": false
+        },
+        {
+          "key": "staff",
+          "label": "Staff Friendliness",
+          "emoji": "\ud83c\udf53",
+          "color": "#FF6347",
+          "x": 31,
+          "y": 9,
+          "alive": false
+        },
+        {
+          "key": "price",
+          "label": "Pricing & Value",
+          "emoji": "\ud83c\udf47",
+          "color": "#8A2BE2",
+          "x": 10,
+          "y": 13,
+          "alive": false
+        },
+        {
+          "key": "speed",
+          "label": "Speed & Wait Time",
+          "emoji": "\ud83c\udf4c",
+          "color": "#FFD700",
+          "x": 33,
+          "y": 17,
+          "alive": false
+        },
+        {
+          "key": "experience",
+          "label": "Overall Experience",
+          "emoji": "\ud83e\udd5d",
+          "color": "#228B22",
+          "x": 37,
+          "y": 27,
+          "alive": false
+        }
+      ]
+    },
+    {
+      "time": "2026-01-18T10:16:42.647774Z",
+      "type": "snake_game",
+      "xp_earned": 20,
+      "payload": [
+        {
+          "key": "staff",
+          "label": "Staff Friendliness",
+          "emoji": "\ud83c\udf53",
+          "color": "#FF6347",
+          "x": 32,
+          "y": 13,
+          "alive": false
+        }
+      ]
+    },
+    {
+      "time": "2026-01-18T10:16:54.801842Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Confusing UI": 1,
+          "Crashes": 1,
+          "Delays": 1,
+          "Slow service": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T10:33:18.394270Z",
+      "type": "snake_game",
+      "xp_earned": 20,
+      "payload": [
+        {
+          "key": "service",
+          "label": "Service Quality",
+          "emoji": "\ud83c\udf4e",
+          "color": "#FF0000",
+          "x": 25,
+          "y": 22,
+          "alive": false
+        },
+        {
+          "key": "staff",
+          "label": "Staff Friendliness",
+          "emoji": "\ud83c\udf53",
+          "color": "#FF6347",
+          "x": 34,
+          "y": 26,
+          "alive": false
+        }
+      ]
+    },
+    {
+      "time": "2026-01-18T10:33:49.780432Z",
+      "type": "snake_game",
+      "xp_earned": 20,
+      "payload": [
+        {
+          "key": "service",
+          "label": "Service Quality",
+          "emoji": "\ud83c\udf4e",
+          "color": "#FF0000",
+          "x": 42,
+          "y": 3,
+          "alive": false
+        }
+      ]
+    },
+    {
+      "time": "2026-01-18T11:18:10.993908Z",
+      "type": "snake_game",
+      "xp_earned": 20,
+      "payload": [
+        {
+          "key": "service",
+          "label": "Service Quality",
+          "emoji": "\ud83c\udf4e",
+          "color": "#FF0000",
+          "x": 16,
+          "y": 17,
+          "alive": false
+        },
+        {
+          "key": "experience",
+          "label": "Overall Experience",
+          "emoji": "\ud83e\udd5d",
+          "color": "#228B22",
+          "x": 32,
+          "y": 19,
+          "alive": false
+        }
+      ]
+    },
+    {
+      "time": "2026-01-18T11:18:26.418699Z",
+      "type": "snake_game",
+      "xp_earned": 20,
+      "payload": [
+        {
+          "key": "staff",
+          "label": "Staff Friendliness",
+          "emoji": "\ud83c\udf53",
+          "color": "#FF6347",
+          "x": 11,
+          "y": 9,
+          "alive": false
+        }
+      ]
+    },
+    {
+      "time": "2026-01-18T12:15:00.031297Z",
+      "type": "snake_game",
+      "xp_earned": 20,
+      "payload": [
+        {
+          "key": "staff",
+          "label": "Staff Friendliness",
+          "emoji": "\ud83c\udf53",
+          "color": "#FF6347",
+          "x": 32,
+          "y": 6,
+          "alive": false
+        },
+        {
+          "key": "service",
+          "label": "Service Quality",
+          "emoji": "\ud83c\udf4e",
+          "color": "#FF0000",
+          "x": 17,
+          "y": 8,
+          "alive": false
+        },
+        {
+          "key": "price",
+          "label": "Pricing & Value",
+          "emoji": "\ud83c\udf47",
+          "color": "#8A2BE2",
+          "x": 12,
+          "y": 21,
+          "alive": false
+        },
+        {
+          "key": "experience",
+          "label": "Overall Experience",
+          "emoji": "\ud83e\udd5d",
+          "color": "#228B22",
+          "x": 42,
+          "y": 27,
+          "alive": false
+        },
+        {
+          "key": "speed",
+          "label": "Speed & Wait Time",
+          "emoji": "\ud83c\udf4c",
+          "color": "#FFD700",
+          "x": 46,
+          "y": 22,
+          "alive": false
+        }
+      ]
+    },
+    {
+      "time": "2026-01-18T12:34:54.079591Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Payment issues": 1,
+          "Other": 1,
+          "Delays": 1,
+          "Slow service": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T12:47:50.086806Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Slow service": 1,
+          "Annoying pop-ups": 1,
+          "Confusing UI": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T12:57:10.981462Z",
+      "type": "bug_game",
+      "xp_earned": 20,
+      "payload": {
+        "clickedTypes": {
+          "Annoying pop-ups": 1,
+          "Crashes": 1,
+          "Delays": 1
+        }
+      }
+    },
+    {
+      "time": "2026-01-18T13:01:29.105169Z",
+      "type": "snake_game",
+      "xp_earned": 20,
+      "payload": [
+        {
+          "key": "staff",
+          "label": "Staff Friendliness",
+          "emoji": "\ud83c\udf53",
+          "color": "#FF6347",
+          "x": 27,
+          "y": 7,
+          "alive": false
+        },
+        {
+          "key": "service",
+          "label": "Service Quality",
+          "emoji": "\ud83c\udf4e",
+          "color": "#FF0000",
+          "x": 17,
+          "y": 9,
+          "alive": false
+        },
+        {
+          "key": "experience",
+          "label": "Overall Experience",
+          "emoji": "\ud83e\udd5d",
+          "color": "#228B22",
+          "x": 10,
+          "y": 14,
+          "alive": false
+        }
+      ]
+    }
+  ]
+}

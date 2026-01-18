@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Bug Click Game</title>
+  <style>
+    body { font-family: system-ui, Arial;
+      margin: 20px; 
+      background: radial-gradient(circle at top, #C4A484, #9AF764); 
+    }
+    canvas { border: 1px solid #f0f0f0; border-radius: 12px; display:block; }
+    .top { display:flex; gap:16px; align-items:center; margin-bottom:10px; flex-wrap:wrap; }
+    button { padding: 8px 10px; border-radius: 10px; border: 1px solid #2d878a; background: rgb(73, 204, 204); cursor:pointer; }
+
+    
+  </style>
+</head>
+<body>
+  <div class="top">
+    <!-- <a href="/">← Home</a> -->
+    <a href="/">← Home</a>
+    <div><b>XP this round:</b> <span id="xp">0</span></div>
+    <div><b>Bugs clicked:</b> <span id="clicked">0</span></div>
+    <button id="finish">Finish & Submit</button>
+  </div>
+
+  <p>Click the bugs that represent issues you experienced.</p>
+
+  <canvas id="game" width="900" height="420"></canvas>
+
+  <script src="/static/js/bug_game.js"></script>
+</body>
+</html>

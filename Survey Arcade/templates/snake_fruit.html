@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Customer Satisfaction Snake Survey</title>
+  <style>
+    
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #2a9b95, #050b18);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+      color: #eaf0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 18px;
+      box-sizing: border-box;
+    }
+    .container { width: 980px; text-align: center; }
+    h1 { margin: 0 0 6px 0; font-size: 28px; }
+    .subtitle { opacity: 0.85; margin-bottom: 10px; font-size: 14px; line-height: 1.35; }
+    canvas {
+      background: #050b18;
+      border: 2px solid rgba(255,255,255,0.35);
+      margin-top: 10px;
+      width: 100%;
+      height: auto;
+      max-width: 980px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 16px;
+      align-items: start;
+      margin-top: 10px;
+    }
+    .panel {
+      text-align: left;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 10px;
+      padding: 12px 12px;
+    }
+    .panel h2 { margin: 0 0 8px 0; font-size: 14px; opacity: 0.95; }
+    .ranking span { display: block; margin: 4px 0; font-size: 13px; opacity: 0.95; }
+    .hint { margin-top: 8px; font-size: 12px; opacity: 0.75; }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      color: #eaf0ff;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .btn:hover { background: rgba(255,255,255,0.09); }
+
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    @media (max-width: 920px) {
+      .row { grid-template-columns: 1fr; }
+    }
+
+    /* Legend */
+    .legend {
+      margin-top: 20px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .legend div {
+      margin-bottom: 10px;
+    }
+
+    .legend span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="home-btn" onclick="window.location.href='/'">🏠 Home</button>
+  <div class="container">
+    <h1>Customer Satisfaction Snake Survey</h1>
+    <div class="subtitle">
+      Rank the areas below from <b>most</b> to <b>least</b> satisfying by eating them in that order.
+      <br/>Controls: Arrow keys / WASD • Press <b>R</b> to restart
+    </div>
+
+    <div class="row">
+      <div>
+        <!-- Bigger play area -->
+        <canvas id="game" width="980" height="600"></canvas>
+      </div>
+
+      <div class="panel">
+        <h2>Your ranking (so far)</h2>
+        <div class="ranking" id="ranking"></div>
+        <div class="hint">
+          Tip: your final ranking is the order you eat the items.
+          Finish all 5 to complete the survey.
+        </div>
+        <button class="btn" id="restartBtn">Restart (R)</button>
+
+        <!-- Legend -->
+        <div class="legend">
+          <h2>Legend</h2>
+          <div><span style="background-color: #FF0000;"></span> Service Quality (🍎)</div>
+          <div><span style="background-color: #FFD700;"></span> Speed & Wait Time (🍌)</div>
+          <div><span style="background-color: #FF6347;"></span> Staff Friendliness (🍓)</div>
+          <div><span style="background-color: #8A2BE2;"></span> Pricing & Value (🍇)</div>
+          <div><span style="background-color: #228B22;"></span> Overall Experience (🥝)</div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn" id="submitBtn">Submit Survey (Earn XP)</button>
+  </div>
+
+  <script src="/static/js/snake_fruit.js"></script>
+</body>
+</html>

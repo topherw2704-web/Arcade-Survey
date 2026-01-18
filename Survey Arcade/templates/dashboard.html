@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 0; max-width: 1100px; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 12px; }
+    .pill { display:inline-block; padding: 4px 10px; border-radius: 999px; background:#f3f3f3; margin-right:6px; margin-bottom:6px; }
+    ul { margin: 8px 0 0 18px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+    .sentiment-bar-container {
+        position: relative;
+        width: 100%;
+        height: 56px;          /* room for label + triangle + bar */
+        margin-top: 8px;
+    }
+
+    .sentiment-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 18px;
+        border-radius: 999px;
+        border: 1px solid #ddd;
+        overflow: hidden;
+        background: linear-gradient(
+            90deg,
+            #e74c3c 0%,
+            #cfcfcf 50%,
+            #2ecc71 100%
+        );
+    }
+
+    .sentiment-pointer {
+        position: absolute;
+        bottom: 18px;          /* sits directly above the bar */
+        transform: translateX(-50%);
+        text-align: center;
+        pointer-events: none;
+    }
+
+    .sentiment-text {
+        display: inline-block;
+        font-size: 12px;
+        background: #111;
+        color: #fff;
+        padding: 3px 8px;
+        border-radius: 999px;
+        white-space: nowrap;
+        margin-bottom: 4px;
+    }
+
+    .sentiment-triangle {
+        width: 0;
+        height: 0;
+        margin: 0 auto;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 10px solid #111;
+    }
+
+  </style>
+</head>
+<body>
+  <a href="/">← Home</a>
+  <h2>Admin Dashboard</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>XP + Level</h3>
+      <p><b>XP:</b> {{ store.xp }} &nbsp; | &nbsp; <b>Level:</b> {{ store.level }}</p>
+    </div>
+
+    <!-- <div class="card">
+      <h3>Sentiment (from AI rambles)</h3>
+      <div class="pill">Positive: {{ sentiment_counts["positive"] }}</div>
+      <div class="pill">Neutral: {{ sentiment_counts["neutral"] }}</div>
+      <div class="pill">Negative: {{ sentiment_counts["negative"] }}</div>
+      <div class="pill">Unknown: {{ sentiment_counts["unknown"] }}</div>
+    </div> -->
+
+    <div class="card">
+        <h3>Overall Sentiment</h3>
+
+        <div class="sentiment-bar-container" title="{{ sentiment_label }}">
+            <div class="sentiment-bar"></div>
+
+            <div class="sentiment-pointer" style="left: {{ sentiment_score }}%;">
+                <div class="sentiment-text">{{ sentiment_label }}</div>
+                <div class="sentiment-triangle"></div>
+        </div>
+    </div>
+
+        <div style="margin-top:10px;">
+            <span class="pill">Positive: {{ sentiment_counts["positive"] }}</span>
+            <span class="pill">Neutral: {{ sentiment_counts["neutral"] }}</span>
+            <span class="pill">Negative: {{ sentiment_counts["negative"] }}</span>
+            <span class="pill">Unknown: {{ sentiment_counts["unknown"] }}</span>
+        </div>
+    </div>
+
+    <div class="card">
+      <h3>Top Reported Issues (D-bugs)</h3>
+      {% if bug_top %}
+        <ul>
+          {% for name, count in bug_top %}
+            <li><b>{{ name }}</b> — {{ count }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p style="color:#666;">No bug-game data yet.</p>
+      {% endif %}
+    </div>
+
+    <div class="card">
+      <h3>Top Themes (AI Tags)</h3>
+      {% if tag_top %}
+        {% for name, count in tag_top %}
+          <span class="pill">{{ name }} ({{ count }})</span>
+        {% endfor %}
+      {% else %}
+        <p style="color:#666;">No AI-tag data yet.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Snake Survey Preferences</h3>
+
+    <h4 style="margin:8px 0 6px 0;">Most satisfied (1st choice)</h4>
+    {% if snake_first_top %}
+      <ul>
+        {% for name, count in snake_first_top %}
+          <li><b>{{ name }}</b> — {{ count }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p style="color:#666;">No snake-game data yet.</p>
+    {% endif %}
+
+  <h4 style="margin:12px 0 6px 0;">Least satisfied (last choice)</h4>
+  {% if snake_last_top %}
+    <ul>
+      {% for name, count in snake_last_top %}
+        <li><b>{{ name }}</b> — {{ count }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p style="color:#666;">No snake-game data yet.</p>
+  {% endif %}
+</div>
+
+  <div class="card" style="margin-top:12px;">
+    <h3>Recent Submissions</h3>
+    <ul>
+      {% for s in store.submissions[-10:] %}
+        <li><b>{{ type_names[s.type] }}</b> (+{{ s.xp_earned }} XP) — {{ s.time[:10] }}</li>
+      {% else %}
+        <li>No submissions yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

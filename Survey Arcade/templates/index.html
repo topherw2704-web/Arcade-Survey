@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Feedback Arcade</title>
+  <style>
+    body {
+      font-family: system-ui, Arial;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #f0f0f0;
+    }
+
+    /* Dashboard button in the top-right corner */
+    .dashboard-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .dashboard-btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Container for game bubbles */
+    .bubble-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+      max-width: 800px; /* Constrain width */
+    }
+
+    /* Game bubble styling */
+    .bubble {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #2a9b95;
+      color: white;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .bubble:hover {
+      transform: scale(1.1);
+      background-color: #09423f;
+    }
+
+    .bubble:active {
+        transform: scale(1.1) translateY(-5px);
+    }
+
+    .locked {
+      background-color: #b0b0b0; /* Gray out the bubble */
+      pointer-events: none; /* Disable clicking */
+    }
+
+    .locked .lock-icon {
+      display: block; /* Show the lock icon */
+    }
+
+    /* Lock icon inside the bubble */
+    .lock-icon {
+      position: absolute;
+      font-size: 40px;
+      color: white;
+      opacity: 0.7;
+      display: none; /* Hide by default */
+    }
+
+    .xp-level {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    /* Progress Bar */
+    /* .progress-bar-container {
+      width: 30%;
+      height: 17px;
+      background-color: #e0e0e0;
+      border: 2px solid black;
+      border-radius: 12px;
+      margin-top: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(
+      90deg,
+      #038637 0%, #06bb4e 50%, #0ae060 100%
+      );
+      transition: width 0.5s ease;
+      border-radius: 12px;
+    } */
+
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    a.button {
+      padding: 10px 12px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dashboard Button -->
+  <button class="dashboard-btn" onclick="window.location.href='/dashboard'">📊 Admin Dashboard</button>
+
+  <h1>Feedback Arcade 🎮</h1>
+  <p style="margin-top:14px; color:#555;">
+      Make feedback feel like play, not a form.
+  </p>
+  <p><b>XP:</b> {{ store.xp }} &nbsp; | &nbsp; <b>Level:</b> {{ store.level }}</p>
+
+  <div class="progress-bar-container">
+    <div class="progress-bar" style="width: {{ progress_percentage }}%;"></div>
+  </div>
+  
+
+  <!-- Game Bubbles -->
+  <div class="bubble-container">
+    <div class="bubble" onclick="window.location.href='/bug-game'">🐛 D-bugs</div>
+    <div class="bubble" onclick="window.location.href='/ramble'">🗣️ Ramble → AI Summary</div>
+    <div class="bubble" onclick="window.location.href='/snake'">🐍 Snake Survey</div>
+    <div class="bubble locked">
+      <div class="lock-icon">🔒</div>
+      🎯 Game 4
+    </div>
+    <div class="bubble locked">
+      <div class="lock-icon">🔒</div>
+      🧩 Game 5
+  </div>
+
+<script>
+    // Update XP and Level dynamically
+    const xpElement = document.getElementById("xp");
+    const levelElement = document.getElementById("level");
+    const progressBar = document.getElementById("progressBar");
+
+    // Function to update XP, Level and Progress Bar
+    function updateXPAndLevel(xp, level, progressPercentage) {
+      xpElement.textContent = xp;
+      levelElement.textContent = level;
+      progressBar.style.width = progressPercentage + '%';
+    }
+
+    // Example of dynamic update when game is completed
+    // This is for the Snake Game (when it's finished)
+    fetch('/api/snake-submit', { method: 'POST' })
+      .then(response => response.json())
+      .then(data => {
+        const xp = data.store.xp;
+        const level = data.store.level;
+        const levelXPThreshold = 100;
+        const currentLevelXP = (level - 1) * levelXPThreshold;
+        const nextLevelXP = level * levelXPThreshold;
+        const progressPercentage = ((xp - currentLevelXP) / (nextLevelXP - currentLevelXP)) * 100;
+        
+        updateXPAndLevel(xp, level, progressPercentage);
+      })
+      .catch(err => console.error('Error updating XP and level:', err));
+  </script>
+
+</body>
+</html>
